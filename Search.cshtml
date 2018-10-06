@@ -1,0 +1,24 @@
+﻿@model List<StackOverflowClone.ViewModels.QuestionViewModel>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Search Results for @ViewBag.str</h3>
+        <table class="table">
+            @foreach (var item in Model)
+            {
+                Html.RenderPartial("Question", item);
+            }
+        </table>
+       
+    </div>
+</div>
+
+
+<script>
+    $("a[href='/allquestions']").attr("id", "active");
+</script>
